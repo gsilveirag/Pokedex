@@ -3,14 +3,16 @@ import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
   container: {
-    borderBlockColor: 'blue',
-    borderWidth: 1,
-    width: '100%',
+    gap: 5,
   },
   texto: {
     color: Colors.black,
     fontSize: 32,
     fontWeight: 'bold',
+  },
+  paragrafo: {
+    color: Colors.gray[0],
+    fontSize: 16,
   },
 });
 

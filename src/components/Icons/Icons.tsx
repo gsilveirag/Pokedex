@@ -1,40 +1,35 @@
-import React, {useState} from 'react';
+import React, {useRef} from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Pressable, View} from 'react-native';
-import {
-  NavigationProp,
-  ParamListBase,
-  useNavigation,
-} from '@react-navigation/native';
+import {Alert, Pressable, View} from 'react-native';
 
 //Styles
 import styles from './styles';
-import ModalScreen from '../Modal/Modal';
+
+// Components
+import ModalScreen from '../Modal/ModalScreen';
+import {Modalize} from 'react-native-modalize';
 
 function Icons() {
-  const {navigate, goBack}: NavigationProp<ParamListBase> = useNavigation();
-  const [modalVisible, setModalVisible] = useState(false);
+  const modalizeRef = useRef<Modalize>(null);
+
+  const onOpen = () => {
+    modalizeRef.current?.open();
+  };
 
   return (
     <>
       <View style={styles.container}>
-        <Pressable onPress={() => setModalVisible(true)}>
+        <Pressable onPress={onOpen}>
           <Icon name="filter-outline" style={styles.icon} />
         </Pressable>
-        <Pressable onPress={() => setModalVisible(true)}>
+        <Pressable onPress={() => Alert.alert('TEste, Teste')}>
           <Icon name="sort" style={styles.icon} />
         </Pressable>
-        <Pressable onPress={() => setModalVisible(true)}>
+        <Pressable onPress={() => Alert.alert('Teste')}>
           <Icon name="creation" style={styles.icon} />
         </Pressable>
+        <ModalScreen modalizeRef={modalizeRef} />
       </View>
-
-      <ModalScreen
-        visible={modalVisible}
-        onClose={() => {
-          setModalVisible(!modalVisible);
-        }}
-      />
     </>
   );
 }

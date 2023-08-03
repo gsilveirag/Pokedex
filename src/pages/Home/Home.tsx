@@ -12,7 +12,10 @@ function Home() {
         <Icons />
       </View>
       <View style={styles.viewTitle}>
-        <Title />
+        <Title
+          title="Pokédex"
+          paragraph="Procure pelo nome do Pokémon ou pelo numero dele."
+        />
       </View>
     </View>
   );

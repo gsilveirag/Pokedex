@@ -1,20 +1,20 @@
 import {StyleSheet} from 'react-native';
+import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingVertical: 25,
     paddingHorizontal: 40,
-    backgroundColor: 'red',
+    backgroundColor: Colors.white,
     justifyContent: 'flex-start',
   },
   viewIcon: {
-    top: 0,
-    left: 165,
+    alignItems: 'flex-end',
   },
   viewTitle: {
-    top: 50,
-    left: 0,
+    paddingVertical: 25,
+    justifyContent: 'flex-end',
   },
 });
 

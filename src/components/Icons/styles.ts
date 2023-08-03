@@ -3,7 +3,7 @@ import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
   container: {
-    gap: 20,
+    gap: 30,
     flexDirection: 'row',
   },
   icon: {
