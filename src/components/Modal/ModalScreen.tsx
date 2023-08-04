@@ -6,7 +6,6 @@ import styles from './styles';
 
 //Components
 import Filter from '../../pages/Filter/Filter';
-import {Text} from 'react-native';
 
 interface IModalScreen {
   modalizeRef?: React.RefObject<Modalize>;

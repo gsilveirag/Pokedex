@@ -3,7 +3,8 @@ import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
   modalizeContainer: {
-    height: '100%',
+    flex: 1,
+
     justifyContent: 'flex-end',
     alignItems: 'center',
   },

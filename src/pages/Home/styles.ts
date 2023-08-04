@@ -10,7 +10,9 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   viewIcon: {
-    alignItems: 'flex-end',
+    gap: 30,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
   },
   viewTitle: {
     paddingVertical: 25,
