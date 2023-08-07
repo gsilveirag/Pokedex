@@ -15,12 +15,15 @@ export default {
     '#76787B',
     '#868686',
     '#C6C6C6',
+    '#17171B',
   ],
   yellow: '#fcc739',
   blue: ['#0D47A1', '#1565C0', '#1671E4'],
-  green: ['#689F38', '#41B883'],
+  green: ['#8bd674', '#41B883'],
   red: ['#BB1626'],
   black: 'black',
+  purple: '#A552CC',
+  grass: '#62B957',
 };
 
 //ajustar de acordo com o projeto.

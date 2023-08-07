@@ -10,13 +10,20 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   viewIcon: {
-    gap: 30,
+    gap: 25,
     flexDirection: 'row',
     justifyContent: 'flex-end',
   },
   viewTitle: {
-    paddingVertical: 25,
+    paddingVertical: 14,
     justifyContent: 'flex-end',
+  },
+  viewInput: {
+    backgroundColor: Colors.gray[1],
+    borderRadius: 5,
+  },
+  viewCards: {
+    paddingVertical: 8,
   },
 });
 

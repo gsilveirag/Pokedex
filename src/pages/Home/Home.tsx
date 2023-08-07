@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import Icons from '../../components/Icons/Icons';
-import {View} from 'react-native';
+import {Pressable, Text, View} from 'react-native';
 
 //Styles
 import styles from './styles';
@@ -9,6 +9,8 @@ import styles from './styles';
 import Title from '../../components/Title/Title';
 import {Modalize} from 'react-native-modalize';
 import ModalSreen from '../../components/Modal/ModalScreen';
+import Input from '../../components/Input/Input';
+import Card from '../../components/Card/Card';
 
 function Home() {
   const modalizeRef = useRef<Modalize>(null);
@@ -45,6 +47,14 @@ function Home() {
             title="Pokédex"
             paragraph="Procure pelo nome do Pokémon ou pelo numero dele."
           />
+        </View>
+
+        <View style={styles.viewInput}>
+          <Input texto="Qual Pokémon voce está procurando?" />
+        </View>
+
+        <View style={styles.viewCards}>
+          <Card />
         </View>
       </View>
 

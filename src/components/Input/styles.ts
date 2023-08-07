@@ -2,10 +2,14 @@ import {StyleSheet} from 'react-native';
 import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
-  container: {},
-  icon: {
-    color: Colors.black,
-    fontSize: 20,
+  inputTexto: {
+    fontSize: 12,
+  },
+  inputView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
   },
 });
 

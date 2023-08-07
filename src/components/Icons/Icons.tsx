@@ -7,7 +7,7 @@ import styles from './styles';
 
 interface IIcon {
   name: string;
-  pressable: () => void;
+  pressable?: () => void;
 }
 
 function Icons({name, pressable}: IIcon) {

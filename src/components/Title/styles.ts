@@ -7,12 +7,12 @@ const styles = StyleSheet.create({
   },
   texto: {
     color: Colors.black,
-    fontSize: 32,
+    fontSize: 30,
     fontWeight: 'bold',
   },
   paragrafo: {
     color: Colors.gray[0],
-    fontSize: 16,
+    fontSize: 13,
   },
 });
 
