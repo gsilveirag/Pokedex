@@ -24,6 +24,7 @@ export default {
   black: 'black',
   purple: '#A552CC',
   grass: '#62B957',
+  fire: '#FFA756',
 };
 
 //ajustar de acordo com o projeto.

@@ -32,9 +32,10 @@ const styles = StyleSheet.create({
     width: 110,
     height: 110,
   },
-  cardBadges: {
+  listBadges: {
     flexDirection: 'row',
     gap: 5,
+    backgroundColor: Colors.fire,
   },
 });
 

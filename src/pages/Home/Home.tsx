@@ -22,11 +22,12 @@ function Home() {
   };
 
   ///////////////////////////////Rota de pegar o Nome do pokemon
+
   const getPokemons = async () => {
     try {
       const response = await GetNome.GetNome();
-      console.log(response);
-      setPokemons(() => response);
+
+      setPokemons(() => ({...response, results: response.results.slice(0, 4)}));
     } catch (error) {
       console.log(error);
     }
@@ -35,7 +36,6 @@ function Home() {
   useEffect(() => {
     getPokemons();
   }, []);
-  ////////////////////////////////////////////////////////////////
 
   return (
     <>
