@@ -1,6 +1,6 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Icons from '../../components/Icons/Icons';
-import {Pressable, Text, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 
 //Styles
 import styles from './styles';
@@ -11,13 +11,31 @@ import {Modalize} from 'react-native-modalize';
 import ModalSreen from '../../components/Modal/ModalScreen';
 import Input from '../../components/Input/Input';
 import Card from '../../components/Card/Card';
+import GetNome from '../../services/GetNome';
 
 function Home() {
   const modalizeRef = useRef<Modalize>(null);
+  const [pokemons, setPokemons] = useState([]);
 
   const onOpen = () => {
     modalizeRef.current?.open();
   };
+
+  ///////////////////////////////Rota de pegar o Nome do pokemon
+  const getPokemons = async () => {
+    try {
+      const response = await GetNome.GetNome();
+      console.log(response);
+      setPokemons(() => response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getPokemons();
+  }, []);
+  ////////////////////////////////////////////////////////////////
 
   return (
     <>
@@ -54,7 +72,11 @@ function Home() {
         </View>
 
         <View style={styles.viewCards}>
-          <Card />
+          <FlatList
+            data={pokemons.results}
+            renderItem={({item, index}) => <Card data={item} index={index} />}
+            keyExtractor={item => item?.name}
+          />
         </View>
       </View>
 
