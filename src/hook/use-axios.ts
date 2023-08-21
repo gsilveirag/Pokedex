@@ -1,6 +1,14 @@
 import {useEffect, useState} from 'react';
+import axios from 'axios';
+import AxiosService from '../services/AxiosService';
 
-export default function useAxios(configRequest) {
+interface ConfigRequest {
+  AxiosService: any; // Coloque o tipo correto para o AxiosService, se possível
+  method: string;
+  url: string;
+  othersConfig?: any; // Coloque o tipo correto para othersConfig, se possível
+}
+export default function useAxios((AxiosService, method,): ConfigRequest) {
   const {AxiosService, method, url, othersConfig = {}} = configRequest;
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
