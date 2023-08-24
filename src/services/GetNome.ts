@@ -1,15 +1,15 @@
 import AxiosService from './AxiosService';
 
+export interface IGetNome {
+  name: string;
+  results: IGetNome[];
+}
+
 const GetNome = async () => {
   const instance = AxiosService.createAxiosInstance();
-  const response = await instance.get('pokemon');
-  return response.data;
+  const response = await instance.get<IGetNome>('pokemon');
+  const nome = response.data.results.map(result => result.name);
+  return nome;
 };
 
-const GetPokemonData = async (id: number) => {
-  const instance = AxiosService.createAxiosInstance();
-  const response = await instance.get(`pokemon/${id}`);
-  return response.data;
-};
-
-export default {GetNome, GetPokemonData};
+export default {GetNome};

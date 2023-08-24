@@ -15,7 +15,7 @@ import GetNome from '../../services/GetNome';
 
 function Home() {
   const modalizeRef = useRef<Modalize>(null);
-  const [pokemons, setPokemons] = useState([]);
+  const [pokemons, setPokemons] = useState<string[]>([]);
 
   const onOpen = () => {
     modalizeRef.current?.open();
@@ -25,7 +25,6 @@ function Home() {
   const getPokemons = async () => {
     try {
       const response = await GetNome.GetNome();
-      console.log(response);
       setPokemons(() => response);
     } catch (error) {
       console.log(error);
@@ -73,9 +72,9 @@ function Home() {
 
         <View style={styles.viewCards}>
           <FlatList
-            data={pokemons.results}
+            data={pokemons.slice(0, 4)}
             renderItem={({item, index}) => <Card data={item} index={index} />}
-            keyExtractor={item => item?.name}
+            keyExtractor={item => item}
           />
         </View>
       </View>

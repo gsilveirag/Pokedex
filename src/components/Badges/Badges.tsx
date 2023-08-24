@@ -8,12 +8,6 @@ interface IBadges {
   texto: string;
 }
 
-// USAR ENUM
-// const insignias = {
-//   ['mato']:require(`.../.././`),
-//   ['fogo']:require(`.../.././`)
-// }
-
 function Badges({texto}: IBadges) {
   return (
     <View style={[styles.viewBadges]}>

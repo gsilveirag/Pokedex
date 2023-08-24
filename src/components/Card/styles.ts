@@ -3,12 +3,15 @@ import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
   cardView: {
+    width: '100%',
+    justifyContent: 'space-between',
     backgroundColor: Colors.green[0],
-    marginBottom: 4,
+    marginBottom: 8,
     marginTop: 15,
-    paddingVertical: 10,
+    paddingVertical: 12,
     paddingHorizontal: 10,
     borderRadius: 10,
+    height: 145,
   },
   cardInfo: {
     flexDirection: 'column',
@@ -17,20 +20,21 @@ const styles = StyleSheet.create({
     width: '50%',
   },
   numeroInfo: {
-    fontSize: 12,
+    fontSize: 15,
     color: Colors.gray[13],
   },
   titleInfo: {
-    fontSize: 23,
+    fontSize: 27,
     color: Colors.white,
     fontWeight: 'bold',
   },
   cardImg: {
     position: 'absolute',
-    left: 160,
+    left: '38%',
+    transform: [{translateX: 50}],
+    width: '50%',
     bottom: 5,
-    width: 110,
-    height: 110,
+    height: '140%',
   },
   listBadges: {
     flexDirection: 'row',
