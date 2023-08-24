@@ -46,7 +46,6 @@ function Card({data, index}: IPoke) {
           renderItem={({item}) => {
             return (
               <Badges
-                img={Img.fire}
                 texto={
                   item.type.name.charAt(0).toUpperCase() +
                   item.type.name.slice(1)
