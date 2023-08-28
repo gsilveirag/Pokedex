@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   },
   numeroInfo: {
     fontSize: 15,
+    fontWeight: 'bold',
     color: Colors.gray[13],
   },
   titleInfo: {
@@ -36,10 +37,10 @@ const styles = StyleSheet.create({
     bottom: 5,
     height: '140%',
   },
-  listBadges: {
+  badges: {
     flexDirection: 'row',
     gap: 5,
-    backgroundColor: Colors.fire,
+    fontSize: 20,
   },
 });
 
