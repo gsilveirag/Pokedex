@@ -11,11 +11,13 @@ import {Modalize} from 'react-native-modalize';
 import ModalSreen from '../../components/Modal/ModalScreen';
 import Input from '../../components/Input/Input';
 import Card from '../../components/Card/Card';
-import GetNome from '../../services/GetNome';
+
+import GetService from '../../services/GetService';
 
 function Home() {
   const modalizeRef = useRef<Modalize>(null);
   const [pokemons, setPokemons] = useState<string[]>([]);
+  const [tipos, setTipos] = useState<string[]>([]);
 
   const onOpen = () => {
     modalizeRef.current?.open();
@@ -24,8 +26,10 @@ function Home() {
   ///////////////////////////////Rota de pegar o Nome do pokemon
   const getPokemons = async () => {
     try {
-      const response = await GetNome.GetNome();
+      const response = await GetService.GetNome();
+      const tipos = await GetService.GetTypes();
       setPokemons(() => response);
+      setTipos(() => tipos);
     } catch (error) {
       console.log(error);
     }
@@ -73,7 +77,9 @@ function Home() {
         <View style={styles.viewCards}>
           <FlatList
             data={pokemons.slice(0, 4)}
-            renderItem={({item, index}) => <Card data={item} index={index} />}
+            renderItem={({item, index}) => (
+              <Card data={item} indice={index} tipos={tipos[0 + index]} />
+            )}
             keyExtractor={item => item}
           />
         </View>
